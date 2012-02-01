@@ -13,13 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+BASE_DIR=$1
 MANUFACTURER=samsung
 DEVICE=tass
 
-mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE
+mkdir -p .${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE
 
-(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor.mk
+(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,7 +53,7 @@ DEVICE_PACKAGE_OVERLAYS := vendor/__MANUFACTURER__/__DEVICE__/overlay
 \$(call inherit-product, vendor/__MANUFACTURER__/__DEVICE__/__DEVICE__-vendor-blobs.mk)
 EOF
 
-(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/BoardConfigVendor.mk
+(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/BoardConfigVendor.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

@@ -29,8 +29,16 @@ usr/keychars
 usr/keylayout
 "
 
+ACTUAL_DIR=`pwd`
+ACTUAL_DIR_SIZE=${#ACTUAL_DIR}
+MANUFACTURER_SIZE=${#MANUFACTURER}
+DEVICE_SIZE=${#DEVICE}
+BREAK_STR=`expr $ACTUAL_DIR_SIZE - \( $MANUFACTURER_SIZE + $DEVICE_SIZE + 9 \)`
+BASE_DIR=`echo $ACTUAL_DIR|cut -c1-${BREAK_STR}`
+echo $BASE_DIR
+
 for DIR in $DIRS; do
-	mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/$DIR
+	mkdir -p ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/proprietary/$DIR
 done
 
 FILES="
@@ -120,12 +128,12 @@ wifi/ath6k/AR6003/hw2.0/otp.bin.z77
 "
 
 for FILE in $FILES; do
-    adb pull system/$FILE ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/$FILE
+    adb pull system/$FILE ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/proprietary/$FILE
 done
 
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin/*
+chmod 755 ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/proprietary/bin/*
 
-(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
+(cat << EOF) | sed -e s/__DEVICE__/$DEVICE/g -e s/__MANUFACTURER__/$MANUFACTURER/g > ${BASE_DIR}/vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The AndroidOpen Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -233,4 +241,4 @@ PRODUCT_COPY_FILES += \\
 
 EOF
 
-./setup-makefiles.sh
+./setup-makefiles.sh ${BASE_DIR}
