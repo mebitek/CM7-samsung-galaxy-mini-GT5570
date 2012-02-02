@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+if [ -e /sys/module/lowmemorykiller/parameters/minfree ]; then
+    echo "1536,2048,6656,7168,7680,8192" > /sys/module/lowmemorykiller/parameters/minfree
+fi 

@@ -96,6 +96,10 @@ PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/samsung/tass/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
+# memory twaks
+PRODUCT_COPY_FILES += \
+    device/samsung/tass/prebuilt/lowmemvalue:system/bin/lowmemvalue	
+
 # Enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
