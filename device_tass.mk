@@ -96,7 +96,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/samsung/tass/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
-# memory tweaks
+# memory twaks
 PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/lowmemvalue:system/bin/lowmemvalue \
     device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks
