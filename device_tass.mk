@@ -99,7 +99,6 @@ PRODUCT_COPY_FILES += \
 # memory tweaks
 PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/lowmemvalue:system/bin/lowmemvalue \
-    device/samsung/tass/prebuilt/additionalbuild.prop:system/additionalbuild.prop \
     device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks
 
 # Enable Google-specific location features,
