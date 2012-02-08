@@ -20,10 +20,27 @@ mot.proximity.delay=25
 persist.sys.purgeable_assets=0
 persist.android.strictmode=0
 ro.kernel.android.checkjni=1
-pm.sleep_mode=2
+pm.sleep_mode=1
 ro.ril.disable.power.collapse=1
 wifi.supplicant_scan_interval=90
 ro.min_pointer_dur=1
 
+# video - photo rec tweaks
 ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.hprof.vid.bps=8000000
+
+#data 3g tweaks
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.ril.hep=1
+ro.ril.enable.dtm=0
+ro.ril.hsdpa.category=8 
+ro.ril.enable.a53=1
+ro.ril.enable.3g.prefix=1
+ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.htcmaskw1=14449
+ro.ril.hsupa.category=6
+
+
+
+
