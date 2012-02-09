@@ -22,7 +22,6 @@ persist.android.strictmode=0
 ro.kernel.android.checkjni=1
 pm.sleep_mode=1
 ro.ril.disable.power.collapse=1
-wifi.supplicant_scan_interval=90
 ro.min_pointer_dur=1
 
 # video - photo rec tweaks

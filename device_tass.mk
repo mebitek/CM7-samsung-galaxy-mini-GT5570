@@ -134,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=60
+    wifi.supplicant_scan_interval=90
 
 # Performance & graphics properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -142,8 +142,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.purgeable_assets=1 \
     persist.sys.use_dithering=1 \
     ro.media.dec.jpeg.memcap=20000000 \
-    ro.opengles.version=131072 \
-    ro.sf.lcd_density=120
+    ro.opengles.version=131072 
 
 # Compcache properties
 PRODUCT_PROPERTY_OVERRIDES += \
