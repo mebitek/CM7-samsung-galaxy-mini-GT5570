@@ -99,6 +99,7 @@ PRODUCT_COPY_FILES += \
 # memory twaks
 PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/lowmemvalue:system/bin/lowmemvalue \
+    device/samsung/tass/prebuilt/lowmemvalue:system/bin/cameraorientation \
     device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks
 
 # Enable Google-specific location features,
@@ -140,7 +141,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=24m \
     persist.sys.purgeable_assets=1 \
-    persist.sys.use_dithering=1 \
+    persist.sys.use_dithering=0 \
     ro.media.dec.jpeg.memcap=20000000 \
     ro.opengles.version=131072 
 
