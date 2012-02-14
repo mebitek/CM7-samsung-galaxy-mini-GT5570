@@ -1,3 +1,5 @@
+#!/system/bin/sh
+
 PID=`ps |grep camera|awk '{print $2}'`
 if [[ ${#PID} -ne 0 ]]; then
         kill -9 $PID
