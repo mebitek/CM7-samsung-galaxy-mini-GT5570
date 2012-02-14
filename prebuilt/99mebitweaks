@@ -4,6 +4,4 @@ log -p i -t mebitweaks "* * * MEBITWEAKS: started"
                                    
 /system/bin/lowmemvalue            
 log -p i -t mebitweaks "* * * MEBITWEAKS: low memory values applied"
-/system/bin/cameraorientation > /dev/null
-log -p i -t mebitweaks "* * * MEBITWEAKS: fix camera orientation"
 log -p i -t mebitweaks "* * * MEBITWEAKS: ended"

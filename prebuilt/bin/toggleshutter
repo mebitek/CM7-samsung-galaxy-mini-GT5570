@@ -1,0 +1,31 @@
+#!/system/bin/sh
+log -p i -t mebitweaks "* * * MEBITWEAKS: toggleshutter"
+
+
+PROP=`getprop ro.camera.sound.disabled`
+if [[ ${#PROP} -eq 0 ]]; then
+	PROP=`getprop persist.sys.camera-mute`
+fi
+log -p i -t mebitweaks "* * * MEBITWEAKS: toggleshutter => $PROP"
+if [[ ${PROP} -eq 1 ]]; then
+	mount -o remount,rw /dev/block/stl12 /system 
+	log -p i -t mebitweaks "* * * MEBITWEAKS: toggleshutter => disable sound"
+	mv /system/media/audio/ui/VideoRecord.ogg /system/media/audio/ui/VideoRecord.ogg_MUTE
+	mv /system/media/audio/ui/camera_click.ogg /system/media/audio/ui/camera_click.ogg_MUTE
+	mount -o remount,ro /dev/block/stl12 /system 
+elif [[ ${PROP} -eq 0 ]]; then
+	mount -o remount,rw /dev/block/stl12 /system 
+	log -p i -t mebitweaks "* * * MEBITWEAKS: toggleshutter => enable sound"
+	if [[ -f /system/media/audio/ui/VideoRecord.ogg_MUTE ]]; then
+		mv /system/media/audio/ui/VideoRecord.ogg_MUTE /system/media/audio/ui/VideoRecord.ogg
+	fi
+	if [[ -f /system/media/audio/ui/camera_click.ogg_MUTE ]]; then
+		mv /system/media/audio/ui/camera_click.ogg_MUTE /system/media/audio/ui/camera_click.ogg
+	fi
+	mount -o remount,ro /dev/block/stl12 /system 
+else 
+	log -p i -t mebitweaks "* * * MEBITWEAKS: toggleshutter first boot => sound is enabled"
+fi
+
+
+exit 0
