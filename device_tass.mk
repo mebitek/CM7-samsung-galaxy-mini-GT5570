@@ -99,7 +99,6 @@ PRODUCT_COPY_FILES += \
 # memory twaks
 PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/bin/lowmemvalue:system/bin/lowmemvalue \
-    device/samsung/tass/prebuilt/bin/cameraorientation:system/bin/cameraorientation \
     device/samsung/tass/prebuilt/bin/toggleshutter:system/bin/toggleshutter \
     device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks 
 

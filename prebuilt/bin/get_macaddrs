@@ -30,9 +30,4 @@ echo $WIFIMAC >/data/.nvmac.info
 echo $BTMAC | sed 's!^M$!!;s!\-!!g;s!\.!!g;s!\(..\)!\1:!g;s!:$!!' >/data/.nvmac_bt.info
 setprop ro.bt.bdaddr_path "/data/.nvmac_bt.info"
 
-# TODO add service. for now i'm unable to add a service to custom init rc.
-# run cameraorientation fix script from here
-
-/system/bin/cameraorientation
-
 exit
