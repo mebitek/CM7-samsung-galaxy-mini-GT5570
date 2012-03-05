@@ -100,7 +100,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/tass/prebuilt/bin/lowmemvalue:system/bin/lowmemvalue \
     device/samsung/tass/prebuilt/bin/toggleshutter:system/bin/toggleshutter \
-    device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks 
+    device/samsung/tass/prebuilt/99mebitweaks:system/etc/init.d/99mebitweaks
 
 # Enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
@@ -135,15 +135,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=90
+    wifi.supplicant_scan_interval=60
 
 # Performance & graphics properties
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=24m \
     persist.sys.purgeable_assets=1 \
-    persist.sys.use_dithering=0 \
+    persist.sys.use_dithering=1 \
     ro.media.dec.jpeg.memcap=20000000 \
-    ro.opengles.version=131072 
+    ro.opengles.version=131072 \
+    ro.sf.lcd_density=120
 
 # Compcache properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,7 +164,7 @@ $(call inherit-product-if-exists, vendor/samsung/tass/tass-vendor.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # LDPI assets
 PRODUCT_LOCALES += ldpi mdpi
