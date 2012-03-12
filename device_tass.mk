@@ -164,7 +164,9 @@ $(call inherit-product-if-exists, vendor/samsung/tass/tass-vendor.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+#$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+PRODUCT_COPY_FILES += \
+    device/samsung/tass/prebuilt/etc/gps.conf:system/etc/gps.conf
 
 # LDPI assets
 PRODUCT_LOCALES += ldpi mdpi
