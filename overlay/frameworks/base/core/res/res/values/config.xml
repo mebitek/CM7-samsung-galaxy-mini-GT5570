@@ -27,7 +27,7 @@
 
     <!-- Use the new fancy screen off animation.
          Turn off to use new Gingerbread animation -->
-    <bool name="config_animateScreenLights">false</bool>
+    <bool name="config_animateScreenLights">true</bool>
 
     <integer-array name="config_autoBrightnessLevels">
         <item>200</item>
