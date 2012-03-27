@@ -13,14 +13,13 @@ media.stagefright.enable-meta=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-http=true
 dalvik.vm.verify-bytecode=false
-dalvik.vm.dexopt-flags=m=v,o=v
+dalvik.vm.dexopt-flags=m=v,o=y
 dalvik.vm.dexopt-data-only=1
 ro.telephony.call_ring.delay=0
 mot.proximity.delay=25
 persist.sys.purgeable_assets=0
 persist.android.strictmode=0
 persist.sys.scrollingcache=2
-persist.sys.rotationanimation=false
 ro.kernel.android.checkjni=1
 pm.sleep_mode=1
 ro.ril.disable.power.collapse=1
